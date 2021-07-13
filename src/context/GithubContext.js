@@ -15,6 +15,7 @@ function GithubState({ children }) {
     e.preventDefault();
     getData();
     setSearch();
+    console.log("submitted...");
   };
 
   const getData = () => {
