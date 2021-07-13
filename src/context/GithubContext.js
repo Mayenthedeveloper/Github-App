@@ -58,7 +58,6 @@ function GithubState({ children }) {
   return (
     <GithubContext.Provider
       value={{
-        getSearch,
         user,
         repos,
         followers,
