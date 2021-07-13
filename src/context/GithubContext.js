@@ -1,19 +1,24 @@
-import { RSA_NO_PADDING } from "constants";
 import React, { createContext, useState, useEffect, Children } from "react";
 
 export const GithubContext = createContext();
 
-function GithubContext({ children }) {
+function GithubState({ children }) {
   const [user, setUser] = useState(null);
   const [repos, setRepos] = useState(null);
   const [followers, setFollowers] = useState(null);
   const [overview, setOverview] = useState(null);
   const [search, setSearch] = useState("");
   const [arrow, setArow] = useState("");
-  const [error, setError] = useState(initialState);
+  const [error, setError] = useState("");
+
+  const getSearch = (e) => {
+    e.preventDefault();
+    getData();
+    setSearch();
+  };
 
   const getData = () => {
-    fetch(`https://api.github.com/users${Search}`).then((res) =>
+    fetch(`https://api.github.com/users${search}`).then((res) =>
       res.json().then((data) => {
         if (data.message) {
           setUser(null);
@@ -50,7 +55,23 @@ function GithubContext({ children }) {
       .then((data) => setFollowers(data));
   };
 
-  return <GithubContext.Provider value={{}}>{children}</GithubContext.Provider>;
+  return (
+    <GithubContext.Provider
+      value={{
+        getSearch,
+        user,
+        repos,
+        followers,
+        overview,
+        search,
+        setSearch,
+        getSearch,
+        error,
+      }}
+    >
+      {children}
+    </GithubContext.Provider>
+  );
 }
 
-export default GithubContext;
+export default GithubState;
