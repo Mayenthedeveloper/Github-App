@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { GitubContext } from "../context/GithubContext";
+import { GithubContext } from "../context/GithubContext";
 
 function User() {
-  const { user } = useContext(GitubContext);
+  const { user } = useContext(GithubContext);
 
   return (
     <div className="user">
@@ -31,7 +31,7 @@ function User() {
               <a
                 href={`https://${user.blog}`}
                 target="_blank"
-                rel="noopener noreferer"
+                rel="noopener noreferrer"
               >
                 <i className="fas fa-link fa-sm">{user.blog}</i>
               </a>

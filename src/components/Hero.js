@@ -10,9 +10,7 @@ function Hero() {
   return (
     <section className="hero">
       <Nav />
-      <Container>
-        <User />
-      </Container>
+      <Container>{user ? <User /> : <p>No user</p>}</Container>
     </section>
   );
 }

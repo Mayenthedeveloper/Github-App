@@ -19,7 +19,7 @@ function GithubState({ children }) {
   };
 
   const getData = () => {
-    fetch(`https://api.github.com/users${search}`).then((res) =>
+    fetch(`https://api.github.com/users/${search}`).then((res) =>
       res.json().then((data) => {
         if (data.message) {
           setUser(null);
@@ -39,20 +39,20 @@ function GithubState({ children }) {
   };
 
   const getRepos = () => {
-    fetch(`https://api.github.com/users${search}/repos`)
+    fetch(`https://api.github.com/users/${search}/repos`)
       .then((res) => res.json())
       .then((data) => setRepos(data));
   };
 
   const getOverview = () => {
-    fetch(`https://api.github.com/users${search}/repos?per_pages=8&&sort=asc`)
+    fetch(`https://api.github.com/users/${search}/repos?per_pages=8&&sort=asc`)
       .then((res) => res.json())
       .then((data) => setOverview(data));
   };
 
   const getFollowers = () => {
-    fetch(`https://api.github.com/users${search}/followers`)
-      .then((res) => res.json)
+    fetch(`https://api.github.com/users/${search}/followers`)
+      .then((res) => res.json())
       .then((data) => setFollowers(data));
   };
 
