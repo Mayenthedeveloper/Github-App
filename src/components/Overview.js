@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GithubContext } from "../context/GithubContext";
 
 function Overview() {
-  return <h1>This is Overview</h1>;
+  const { overview } = useContext(GithubContext);
+
+  return <div className="overviewContainer"></div>;
 }
 
 export default Overview;
