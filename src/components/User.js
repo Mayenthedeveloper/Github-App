@@ -23,7 +23,7 @@ function User() {
           <div className="userLinks">
             {user.location && (
               <p>
-                <i className="fas fa-marker-alt fa-sm"></i>
+                <i className="fas fa-map-marker-alt fa-sm"></i>
                 {user.location}
               </p>
             )}
