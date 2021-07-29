@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { isDOMComponentElement } from "react-dom/test-utils";
 import { GithubContext } from "../context/GithubContext";
 
 function Overview() {
