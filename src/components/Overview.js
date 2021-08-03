@@ -13,7 +13,7 @@ function Overview() {
             href={item.html_url}
             target="_blank"
             key={index}
-            rel="noopener noeferrer"
+            rel="noopener noreferrer"
           >
             <div className={"overview overview" + ++id}>
               {item.name && <h2>{item.name}</h2>}
